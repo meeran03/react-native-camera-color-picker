@@ -97,7 +97,7 @@ export default class ExampleApp extends PureComponent {
             return (
               <>
               <View style={{ flex: 0, justifyContent: 'center' }}>
-                <TouchableOpacity onPress={() => this.takePicture(camera)} style={styles.capture}>
+                <TouchableOpacity onPress={() => this.takePicture(camera)} style={{...styles.capture,backgroundColor:this.state.color}}>
                   <Text style={{ fontSize: 14 }}> SNAP </Text>
                 </TouchableOpacity>
 
@@ -134,16 +134,29 @@ export default class ExampleApp extends PureComponent {
 
       <View
               style={{
-                padding : 10,
+                padding : 50,
                 borderRadius : 100/2,
-                borderColor : this.state.color,
+                borderColor : "white",
                 borderWidth : 5,
                 zIndex : 10,
                 alignSelf : 'center',
                 position : "absolute",
                 top : height/2
               }}
-            ></View>
+            >
+              <View
+                style={{
+                  padding : 5,
+                  borderRadius : width/2,
+                  zIndex : 10,
+                  alignSelf : 'center',
+                  backgroundColor : "white"
+                }}
+              >
+
+              </View>
+            </View>
+
       </View>
     );
   }
